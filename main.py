@@ -36,6 +36,7 @@ def generate_fruit_pos(snake_body):
 
 def move_snake(snake_body):
     x, y, direction = snake_body[0][0]
+    head_color = snake_body[0][1]
 
     if direction == "UP":
         y -= 1
@@ -46,7 +47,7 @@ def move_snake(snake_body):
     elif direction == "LEFT":
         x -= 1
 
-    new_snake = [[[x, y, direction], (180,0,0)]]
+    new_snake = [[[x, y, direction], head_color]]
     for i in range(1, len(snake_body)):
         new_snake.append([snake_body[i - 1][0], (255,255,255)])
             
